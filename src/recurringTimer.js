@@ -1,4 +1,5 @@
-/**
+
+  /**
  * Function: recurringTimer
  * Description: Starts a recurring timer that logs a message at fixed intervals.
  *
@@ -10,6 +11,13 @@
  * Example Usage:
  * const timerId = recurringTimer("Hello, world!", 2000); // Logs "Hello, world!" every 2 seconds.
  */
+function recurringTimer(message, interval) {
+  const timerId = setInterval(() => {
+    console.log(message);
+  }, interval);
+
+  return timerId; // return ID so it can be stopped later
+}
 
 /**
  * Function: stopRecurringTimer
@@ -20,15 +28,10 @@
  * 2. Use `clearInterval` to stop the recurring timer.
  *
  * Example Usage:
- * stopRecurringTimer(timerId); // Stops the recurring timer started with the given ID.
+ * stopRecurringTimer(timerId);
  */
-function recurringTimer(message, interval) {
-  // Set up a timer using setInterval to log the message
-  // Return the timer ID
-}
-
 function stopRecurringTimer(timerId) {
-  // Stop the timer using clearInterval
+  clearInterval(timerId);
 }
 
 module.exports = { recurringTimer, stopRecurringTimer };
